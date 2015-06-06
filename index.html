@@ -36,9 +36,9 @@ function functionTwo() {
     }
   }*/
 
-  var appID = uri_dec.substring(uri_dec.indexOf("app_id\":"));
-  var ID = uri_dec.substring(uri_dec.indexOf("id\":"));
-  var login = uri_dec.substring(uri_dec.indexOf("login_token\":"));
+  var appID = uri_dec.substring(uri_dec.indexOf("app_id\":"),uri_dec.indexOf("app_id\":")+24);
+  var ID = uri_dec.substring(uri_dec.indexOf("id\":"),uri_dec.indexOf("id\":")+20);
+  var login = uri_dec.substring(uri_dec.indexOf("login_token\":"),uri_dec.indexOf("login_token\":")+20);
   alert(appID);
   alert(ID);
   alert(login);
