@@ -7,7 +7,7 @@ function functionTwo() {
   for (i = 0; i < here.length; i++) { 
     if(here[i]=='?')
     {
-      alert(here.substring(i+1));
+      alert(here);
       var obj = jQuery.parseJSON( here.substring(i+1) );
       alert(obj.data);
     }
