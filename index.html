@@ -12,6 +12,7 @@ function functionTwo() {
     if(uri_dec[i]=='?')
     {
       alert(uri_dec.substring(i+1));
+      uri_dec = uri_dec.substring(i+1);
       var temp = uri_dec[0];
 
       for(j = 0; j < uri_dec.length; j++)
@@ -26,7 +27,8 @@ function functionTwo() {
         }
         temp = uri_dec[j];
       }
-      alert(output);//hopefully secret
+      alert(output);//hopefully secret-nope //p.s. idk how brackets work
+
 
       //TODO get id,app id, and secret
       //TODO Call fetch using above info
