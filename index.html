@@ -5,11 +5,11 @@ function functionOne() { alert('You clicked the top text n stuff'); }
 function functionTwo() { 
   var here = window.location.href;
   var uri_dec = decodeURIComponent(here);
-  alert(uri_dec);
+  //alert(uri_dec);
   for (i = 0; i < uri_dec.length; i++) { 
     if(here[i]=='?')
     {
-      var obj = jQuery.parseJSON(uri_dec[i]);
+      var obj = jQuery.parseJSON(uri_dec[i+1]);
       alert(obj.app_id);
     }
   }
