@@ -6,11 +6,10 @@ function functionTwo() {
   var here = window.location.href;
   var uri_dec = decodeURIComponent(here);
   alert(uri_dec);
-  alert("here");
   for (i = 0; i < uri_dec.length; i++) { 
     if(here[i]=='?')
     {
-      alert("here");
+      alert(uri_dec.substring(i+1));
       var obj = jQuery.parseJSON(uri_dec.substring(i+1));
       alert("here");
       alert(obj.app_id);
