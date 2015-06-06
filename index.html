@@ -5,8 +5,9 @@ function functionOne() { alert('You clicked the top text n stuff'); }
 function functionTwo() { 
   var here = window.location.href;
   var uri_dec = decodeURIComponent(here);
-  //alert(uri_dec);
+  alert(uri_dec);
   for (i = 0; i < uri_dec.length; i++) { 
+    alert("here");
     if(here[i]=='?')
     {
       alert("here");
