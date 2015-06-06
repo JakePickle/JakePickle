@@ -45,6 +45,29 @@ function functionTwo() {
   }
   //alert(uri_dec.substring(uri_dec.indexOf("login_token\":")));
   var login = uri_dec.substring(uri_dec.indexOf("login_token\":"),uri_dec.indexOf("login_token\":")+count);
+
+  var count1=0;
+  while(uri_dec[uri_dec.indexOf("app_id\":")+count]!=':')
+  {
+    count1++;
+  }
+
+  var count2=0;
+  while(uri_dec[uri_dec.indexOf("id\":")+count]!=':')
+  {
+    count2++;
+  }
+
+  var count3=0;
+  while(uri_dec[uri_dec.indexOf("login_token\":")+count]!=':')
+  {
+    count3++;
+  }
+
+  appID = appID.substring(count1);
+  ID = ID.substring(count2);
+  login = login.substring(coun3);
+
   alert(appID);
   alert(ID);
   alert(login);
