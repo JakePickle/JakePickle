@@ -3,34 +3,34 @@
   <script type="text/javascript">
 function functionOne() { alert('You clicked the top text n stuff'); }
 function functionTwo() {
-  var args 
+  var args;
+  var output=""; 
   var here = window.location.href;
   var uri_dec = decodeURIComponent(here);
-  alert(uri_dec);
+  //alert(uri_dec);
   for (i = 0; i < uri_dec.length; i++) { 
     if(uri_dec[i]=='?')
     {
       alert(uri_dec.substring(i+1));
-      uri_dec=uri_dec.substring(i+1)
-      for(i = 0; i < uri_dec.length; i++)
+      var temp = uri_dec[0];
+
+      for(j = 0; j < uri_dec.length; j++)
       {
-        if(uri_dec[i]=='a'&&uri_dec[i+1]=='r'&&uri_dec[i+2]=='g')
+        if(uri_dec[j]=='/')
         {
-          args = "";
-          var temp = uri_dec[i+5];
-          while(temp!='}')
+          for(k = 0; k< uri_dec.substring(j).length; k++)
           {
-            args+=temp;
-            temp = uri_dec[i++];
+            output+=temp;
+            temp = uri_dec[k];
           }
-          args+='}';
         }
+        temp = uri_dec[j];
       }
-      args = args.substring(7);
-      alert(args);
-      var obj = jQuery.parseJSON(args);
-      alert("here");
-      alert(obj.app_id);
+      alert(output);//hopefully secret
+
+      //TODO get id,app id, and secret
+      //TODO Call fetch using above info
+      break;//because i can
     }
   }
 }
