@@ -1,0 +1,25 @@
+<html>
+ <head>
+  <script type="text/javascript">
+function functionOne() { alert('You clicked the top text'); }
+function functionTwo() { alert(getParameterByName("data")); }
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+  </script>
+ </head>
+<body>
+ <p><a href="#" onClick="functionOne();">Top Text</a></p>
+ <p><a href="javascript:functionTwo();">Bottom Text</a></p>
+ </body>
+</html>
