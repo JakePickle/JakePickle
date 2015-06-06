@@ -2,7 +2,8 @@
  <head>
   <script type="text/javascript">
 function functionOne() { alert('You clicked the top text n stuff'); }
-function functionTwo() { 
+function functionTwo() {
+  var args 
   var here = window.location.href;
   var uri_dec = decodeURIComponent(here);
   alert(uri_dec);
@@ -10,6 +11,21 @@ function functionTwo() {
     if(uri_dec[i]=='?')
     {
       alert(uri_dec.substring(i+1));
+      uri_dec=uri_dec.substring(i+1)
+      for(i = 0; i < uri_dec.length; i++)
+      {
+        if(uri_dec[i]=='a'&&uri_dec[i+1]=='r'&&uri_dec[i+2]=='g')
+        {
+          args = "";
+          var temp = uri_dec[i+5];
+          while(temp!='}')
+          {
+            args+=temp;
+            temp = uri_dec[i++];
+          }
+          args+='}';
+        }
+      }
       var obj = jQuery.parseJSON(uri_dec.substring(i+1));
       alert("here");
       alert(obj.app_id);
