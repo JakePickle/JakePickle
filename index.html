@@ -9,6 +9,7 @@ function functionTwo() {
   for (i = 0; i < uri_dec.length; i++) { 
     if(here[i]=='?')
     {
+      alert("here");
       var obj = jQuery.parseJSON(uri_dec.substring(i+1));
       alert("here");
       alert(obj.app_id);
