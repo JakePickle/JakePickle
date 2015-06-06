@@ -4,12 +4,12 @@
 function functionOne() { alert('You clicked the top text n stuff'); }
 function functionTwo() { 
   var here = window.location.href;
-  for (i = 0; i < here.length; i++) { 
+  var uri_dec = decodeURIComponent(here);
+  alert(uri_dec);
+  for (i = 0; i < uri_dec.length; i++) { 
     if(here[i]=='?')
     {
-      var uri_dec = decodeURIComponent(here);
-      alert(uri_dec);
-      var obj = jQuery.parseJSON(uri_dec);
+      var obj = jQuery.parseJSON(uri_dec[i]);
       alert(obj.app_id);
     }
   }
