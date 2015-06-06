@@ -8,7 +8,7 @@ function functionTwo() {
   var here = window.location.href;
   var uri_dec = decodeURIComponent(here);
   //alert(uri_dec);
-  for (i = 0; i < uri_dec.length; i++) { 
+  /*for (i = 0; i < uri_dec.length; i++) { 
     if(uri_dec[i]=='?')
     {
       alert(uri_dec.substring(i+1));
@@ -27,14 +27,21 @@ function functionTwo() {
         }
         temp = uri_dec[j];
       }
-      alert(output);//hopefully secret-nope //p.s. idk how brackets work
+      //alert(output);//hopefully secret-nope //p.s. idk how brackets work
 
 
       //TODO get id,app id, and secret
       //TODO Call fetch using above info
       break;//because i can
     }
-  }
+  }*/
+
+  var appID = uri_dec.substring(uri_dec.indexOf("app_id\":"));
+  var ID = uri_dec.substring(uri_dec.indexOf("id\":"));
+  var login = uri_dec.substring(uri_dec.indexOf("login_token\":"));
+  alert(appID);
+  alert(ID);
+  alert(login);
 }
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
