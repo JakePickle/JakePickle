@@ -1,0 +1,98 @@
+<html>
+ <head>
+  <script type="text/javascript">
+function functionOne() { alert('You clicked the top text n stuff'); }
+function functionTwo() {
+  var args;
+  var output=""; 
+  var here = window.location.href;
+  var uri_dec = decodeURIComponent(here);
+  alert(uri_dec);
+  /*for (i = 0; i < uri_dec.length; i++) { 
+    if(uri_dec[i]=='?')
+    {
+      alert(uri_dec.substring(i+1));
+      uri_dec = uri_dec.substring(i+1);
+      var temp = uri_dec[0];
+
+      for(j = 0; j < uri_dec.length; j++)
+      {
+        if(uri_dec[j]=='/')
+        {
+          for(k = 0; k< uri_dec.substring(j).length; k++)
+          {
+            output+=temp;
+            temp = uri_dec[k];
+          }
+        }
+        temp = uri_dec[j];
+      }
+      //alert(output);//hopefully secret-nope //p.s. idk how brackets work
+
+
+      //TODO get id,app id, and secret
+      //TODO Call fetch using above info
+      break;//because i can
+    }
+  }*/
+
+  var appID = uri_dec.substring(uri_dec.indexOf("app_id\":"),uri_dec.indexOf("app_id\":")+24);
+  var ID = uri_dec.substring(uri_dec.indexOf("id\":"),uri_dec.indexOf("id\":")+20);
+  var count=0;
+  while(uri_dec[uri_dec.indexOf("login_token\":")+count]!='=')
+  {
+    count++;
+  }
+  //alert(uri_dec.substring(uri_dec.indexOf("login_token\":")));
+  var login = uri_dec.substring(uri_dec.indexOf("login_token\":"),uri_dec.indexOf("login_token\":")+count);
+
+  var count1=0;
+  //while(appID[count1]!=':')
+  {
+    count1++;
+  }
+
+  var count2=0;
+  //while(ID[count2]]!=':')
+  {
+    count2++;
+  }
+
+  var count3=0;
+  //while(login[count3]!=':')
+  {
+    count3++;
+  }
+
+  appID = appID.substring(8);
+  ID = ID.substring(4);
+  login = login.substring(login.length-86);
+  login += "==";
+
+  alert(appID);
+  alert(ID);
+  alert(login);
+  var response = httpGet("http://api.globalhack4.test.lockerdome.com/app_create_content?{\"app_id\":" + appID + ",\"app_secret\":" + login + ",\"content_id\":"+ID+"}");
+  alert(jQuery.parseJSON(reponse));
+  alert("here");
+}
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+  </script>
+ </head>
+<body>
+ <p><a href="#" onClick="functionOne();">Top Text</a></p>
+ <p><a href="javascript:functionTwo();">Bottom Text</a></p>
+ </body>
+</html>
