@@ -7,7 +7,7 @@ function functionTwo() {
   var uri_dec = decodeURIComponent(here);
   alert(uri_dec);
   for (i = 0; i < uri_dec.length; i++) { 
-    if(here[i]=='?')
+    if(uri_dec[i]=='?')
     {
       alert(uri_dec.substring(i+1));
       var obj = jQuery.parseJSON(uri_dec.substring(i+1));
