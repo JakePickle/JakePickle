@@ -2,9 +2,7 @@
  <head>
   <script type="text/javascript">
 function functionOne() { alert('You clicked the top text n stuff'); }
-function functionTwo() { var obj = jQuery.parseJSON(getParameterByName("app_data"));
-  alert(getParameterByName(obj.data)); 
-}
+function functionTwo() { alert(getParameterByName("data")); }
 function getParameterByName(name) {
     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
     var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
