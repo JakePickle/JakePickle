@@ -28,7 +28,7 @@
           <ul>
             <li><a href="#one" class="active">Description</a></li>
             <li><a href="#two">Media</a></li>
-            <li><a href="#three">Upload</a></li>
+            <li><a href="#three" >Upload</a></li>
             <li><a href="#four">Preview</a></li>
           </ul>
         </nav>
@@ -50,7 +50,7 @@
           <div id="main">
 
             <!-- One -->
-            <form method="post" action="#">
+            <form method="get" action="">
               <section id="one">
                 <div class="container">
                   <header class="major">
@@ -59,6 +59,41 @@
                   <h3>Description<br /></h3>
                   </header>
                   <textarea name="textbox" id="textbox" placeholder="Insert description." rows="6"></textarea>
+                	<button id="pickles">Upload</button>
+                  
+                        <script>
+                        var button = document.getElementById("pickles");
+					button.onclick = function(){
+
+            var xmlHttp = new XMLHttpRequest();
+            document.getElementById("textbox")="here-1";
+            xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/app_create_content?{\"app_id\":7740937031647298,\"app_secret\":\"NIn1alp8Ggz2T7F12TiPRIICQ43CRkOsMJLB1/5dm0zEPzZAOxZ5B2CbQxJH4dxCXnPuLr8G3+PbWy16r3j8bg==\",\"app_data\":{\"data\":\"pants\"},\"name\":document.getElementById(\"textbox1\").value,\"text\":document.getElementById(\"textbox\").value,\"app_data\": {\"data\":\"pants\"}}", false );
+            
+
+					  /*document.getElementById("textbox").value="here-1";
+					  var name=document.getElementById("textbox1").value;
+        var description=document.getElementById("textbox").value;
+        var xmlHttp = new XMLHttpRequest();
+        document.getElementById("textbox")="here-1";
+          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/do_pw_login?{\"username\":\"jmp6xb@mst.edu\",\"password_hash\":\"!Password\"}"), false );
+        document.getElementById("textbox")="here";
+             xmlHttp.send( null );
+          var login_token decodeURI(xmlHttp.responseText);
+         document.getElementById("textbox")="here1";
+          var obj = jQuery.parseJSON(login_token);
+          document.getElementById("textbox")=obj.login_token;
+          document.getElementById("textbox")="here2";
+          xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/get_login_accounts?{\"login_token\":login_token}"), false );xmlHttp.send( null );
+          var account_id decodeURI(xmlHttp.responseText[0]);
+          var obj = jQuery.parseJSON(account_id);
+         document.getElementById("textbox1")=obj.account_id;
+        xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/create_content?{\"login_token\":login_token,\"account_id\":account_id,\"type\":\"page\",\"title\":\"Title here\",\"body\":\"body here\"}"), false );
+             xmlHttp.send( null );
+          var content_id decodeURI(xmlHttp.responseText);*/ 
+					}
+					</script>
                 </div>
               </section>
 
@@ -72,16 +107,11 @@
             <!-- Three -->
               <section id="three">
                 <div class="container">
-                  <h3>Upload</h3>
-                  <p></p>
+                 
+
                     <div class="row uniform">
                       <div class="12u">
-                        <ul class="actions">
-                          <li>
-                          <input type="button" value="Upload to LockerDome" onclick="workisay"/>
-                          </li>
-                          <li><input type="reset" value="Reset" /></li>
-                        </ul>
+       				  
                       </div>
                     </div>
                   </form>
@@ -92,7 +122,7 @@
               <section id="four">
                 <div class="container">
                   <h3>Preview</h3>
-                  <p><a href="http://en.wikipedia.org/"></a><class="box"><iframe src="http://en.wikipedia.org/" width = "500px" height = "500px"></iframe></p>
+                  <p><a href="http://www.purina.com"></a><class="box"><iframe src="http://www.purina.com" width = "500px" height = "500px"></iframe></p>
                   </div>
               </section>
           </div>
@@ -109,41 +139,61 @@
       </div>
 
     <!-- Scripts -->
-    <script>
+   <!-- <script>
       function workisay()
       {
-        document.getElementById("textbox").value="here-2";
         var name=document.getElementById("textbox1").value;
         var description=document.getElementById("textbox").value;
+        document.getElementById("textbox1").value=description;
+        document.getElementById("textbox").value=name;
         var xmlHttp = new XMLHttpRequest();
-        document.getElementById("textbox")="here-1";
-          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/do_pw_login?{\"username\":\"jmp6xb@mst.edu\",\"password_hash\":\"!Password\"}"), false );
-        document.getElementById("textbox")="here";
-             xmlHttp.send( null );
-          var login_token decodeURI(xmlHttp.responseText);
-          document.getElementById("textbox")="here1";
-          var obj = jQuery.parseJSON(login_token);
-          document.getElementById("textbox")=obj.login_token;
-          document.getElementById("textbox")="here2";
+        //added below line by blake
+        var responseJSON = null;
+          xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/do_pw_login?
+          { 
+	          "username":"jmp6xb@mst.edu",
+          	  "password_hash":"!Password"
+          }", false );
+          xmlHttp.send( null );
+          //var login_token xmlHttp.responseText;
+          //added below line by blake
+          var responseJSON = xmlHttp.responseText ? (!responseJSON ? JSON.parse(xmlHttp.responseText) : responseJSON) : null;
+          document.getElementById("textbox")=login_token;
           xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/get_login_accounts?{\"login_token\":login_token}"), false );xmlHttp.send( null );
-          var account_id decodeURI(xmlHttp.responseText[0]);
-          var obj = jQuery.parseJSON(account_id);
-          document.getElementById("textbox1")=obj.account_id;
-        xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/create_content?{\"login_token\":login_token,\"account_id\":account_id,\"type\":\"page\",\"title\":\"Title here\",\"body\":\"body here\"}"), false );
-             xmlHttp.send( null );
-          var content_id decodeURI(xmlHttp.responseText);          
+          xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/get_login_accounts?
+          {
+	          "login_token":"login_token"
+	      }", false );
+          xmlHttp.send( null );
+          //var account_id xmlHttp.responseText[0];
+          //added below line by blake
+          var responseJSON = xmlHttp.responseText[0] ? (!responseJSON ? JSON.parse(xmlHttp.responseText) : responseJSON) : null;
+          document.getElementById("textbox1")=account_id;
+          xmlHttp = new XMLHttpRequest();
+          xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/create_content?
+          {
+	          "login_token":"login_token",
+	          "account_id":"account_id",
+	          "type":"page",
+	          "title":"Title here",
+	          "body":"body here"
+	      }", false );
+          xmlHttp.send( null );
+          //var content_id xmlHttp.responseText;
+          //added below line by blake
+          var responseJSON = xmlHttp.responseText ? (!responseJSON ? JSON.parse(xmlHttp.responseText) : responseJSON) : null;          
         
       }
-    </script>
+    </script> -->
+
+
       <script src="examples/serverside_api_example.js"></script>
       <script src="examples/clientside_example/public/javascripts/app_platform.js"></script>
       <script src="examples/clientside_example/public/javascripts/jquery.js"></script>
       <script src="assets/js/jquery.min.js"></script>
       <script src="assets/js/jquery.scrollzer.min.js"></script>
       <script src="assets/js/jquery.scrolly.min.js"></script>
-      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/skel.min.js"></script> 
       <script src="assets/js/util.js"></script>
       <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
       <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
