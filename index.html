@@ -115,18 +115,18 @@
         var name=document.getElementById("textbox1").value;
         var description=document.getElementById("textbox").value;
         var xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", escape("http://api.globalhack4.test.lockerdome.com/do_pw_login?{\"username\":\"jmp6xb@mst.edu\",\"password_hash\":\"!Password\"}"), false );
+          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/do_pw_login?{\"username\":\"jmp6xb@mst.edu\",\"password_hash\":\"!Password\"}"), false );
              xmlHttp.send( null );
           var login_token decodeURI(xmlHttp.responseText);
           var obj = jQuery.parseJSON(login_token);
           document.getElementById("textbox")=obj.login_token;
           xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", escape("http://api.globalhack4.test.lockerdome.com/get_login_accounts?{\"login_token\":login_token}"), false );xmlHttp.send( null );
+          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/get_login_accounts?{\"login_token\":login_token}"), false );xmlHttp.send( null );
           var account_id decodeURI(xmlHttp.responseText[0]);
           var obj = jQuery.parseJSON(account_id);
           document.getElementById("textbox1")=obj.account_id;
         xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", escape("http://api.globalhack4.test.lockerdome.com/create_content?{\"login_token\":login_token,\"account_id\":account_id,\"type\":\"page\",\"title\":\"Title here\",\"body\":\"body here\"}"), false );
+          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/create_content?{\"login_token\":login_token,\"account_id\":account_id,\"type\":\"page\",\"title\":\"Title here\",\"body\":\"body here\"}"), false );
              xmlHttp.send( null );
           var content_id decodeURI(xmlHttp.responseText);          
         
