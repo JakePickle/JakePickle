@@ -1,208 +1,48 @@
-<!DOCTYPE HTML>
-<!--
-  Read Only by HTML5 UP
-  html5up.net | @n33co
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
+
   <head>
-    <title>Comp Sigh Demo</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <link rel="stylesheet" href="./css\bootstrap.css">
+    
+    
+    <link rel="stylesheet" href="main.css">
+    
+  </head>
 
-   </head>
   <body>
-  
-    <!-- Header -->
-      <section id="header">
-        <header>
-          <span class="image avatar"><img src="images/avatar.png" alt="" /></span>
-          <h1 id="logo"><a href="#">Comp Sigh Demo</a></h1>
-          <p>Lockerdome uploading, now simple.<br />
-            </p>
-        </header>
-        <nav id="nav">
-          <ul>
-            <li><a href="#one" class="active">Description</a></li>
-            <li><a href="#two">Media</a></li>
-            <li><a href="#three" >Upload</a></li>
-            <li><a href="#four">Preview</a></li>
-          </ul>
-        </nav>
-        <footer>
-          <ul class="icons">
-            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-            <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-          </ul>
-        </footer>
-      </section>
-
-    <!-- Wrapper -->
-      <div id="wrapper">
-
-        <!-- Main -->
-          <div id="main">
-
-            <!-- One -->
-            <form method="get" action="">
-              <section id="one">
-                <div class="container">
-                  <header class="major">
-                  <h3>Name</h3>
-                  <textarea name="textbox1" id="textbox1" placeholder="Insert name." rows="1"></textarea>
-                  <h3>Description<br /></h3>
-                  </header>
-                  <textarea name="textbox" id="textbox" placeholder="Insert description." rows="6"></textarea>
-                	<button id="pickles">Upload</button>
-                  
-                        <script>
-                        var button = document.getElementById("pickles");
-					button.onclick = function(){
-
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET",encodeURIComponent("http://api.globalhack4.test.lockerdome.com/app_create_content?{\"app_id\":7740937031647298,\"app_secret\":\"NIn1alp8Ggz2T7F12TiPRIICQ43CRkOsMJLB1/5dm0zEPzZAOxZ5B2CbQxJH4dxCXnPuLr8G3+PbWy16r3j8bg==\",\"app_data\":{\"data\":\"pants\"},\"name\":document.getElementById(\"textbox1\").value,\"text\":document.getElementById(\"textbox\").value,\"app_data\": {\"data\":\"pants\"}}"),true);
-            /*document.getElementById("textbox")="here-1";
-            xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/app_create_content?{\"app_id\":7740937031647298,\"app_secret\":\"NIn1alp8Ggz2T7F12TiPRIICQ43CRkOsMJLB1/5dm0zEPzZAOxZ5B2CbQxJH4dxCXnPuLr8G3+PbWy16r3j8bg==\",\"app_data\":{\"data\":\"pants\"},\"name\":document.getElementById(\"textbox1\").value,\"text\":document.getElementById(\"textbox\").value,\"app_data\": {\"data\":\"pants\"}}", false );
-            xmlHttp.send( null );
-            var response xmlHttp.responseText;*/
-            
-
-					  /*document.getElementById("textbox").value="here-1";
-					  var name=document.getElementById("textbox1").value;
-        var description=document.getElementById("textbox").value;
-        var xmlHttp = new XMLHttpRequest();
-        document.getElementById("textbox")="here-1";
-          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/do_pw_login?{\"username\":\"jmp6xb@mst.edu\",\"password_hash\":\"!Password\"}"), false );
-        document.getElementById("textbox")="here";
-             xmlHttp.send( null );
-          var login_token decodeURI(xmlHttp.responseText);
-         document.getElementById("textbox")="here1";
-          var obj = jQuery.parseJSON(login_token);
-          document.getElementById("textbox")=obj.login_token;
-          document.getElementById("textbox")="here2";
-          xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/get_login_accounts?{\"login_token\":login_token}"), false );xmlHttp.send( null );
-          var account_id decodeURI(xmlHttp.responseText[0]);
-          var obj = jQuery.parseJSON(account_id);
-         document.getElementById("textbox1")=obj.account_id;
-        xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", encodeURIComponent("http://api.globalhack4.test.lockerdome.com/create_content?{\"login_token\":login_token,\"account_id\":account_id,\"type\":\"page\",\"title\":\"Title here\",\"body\":\"body here\"}"), false );
-             xmlHttp.send( null );
-          var content_id decodeURI(xmlHttp.responseText);*/ 
-					}
-					</script>
-                </div>
-              </section>
-
-            <!-- Two -->
-              <section id="two">
-                <div class="container">
-                  <h3>Media</h3>
-                  <form action="/upload-target" class="dropzone"></form>
-              </section>
-
-            <!-- Three -->
-              <section id="three">
-                <div class="container">
-                 
-
-                    <div class="row uniform">
-                      <div class="12u">
-       				  
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </section>
-            </form>
-            <!-- Four -->
-              <section id="four">
-                <div class="container">
-                  <h3>Preview</h3>
-                  <p><a href="http://www.purina.com"></a><class="box"><iframe src="http://www.purina.com" width = "500px" height = "500px"></iframe></p>
-                  </div>
-              </section>
-          </div>
-
-        <!-- Footer -->
-          <section id="footer">
-            <div class="container">
-              <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-              </ul>
-            </div>
-          </section>
-
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./projects.html">Other</a></li>
+        </ul>
       </div>
+    </div>
 
-    <!-- Scripts -->
-   <!-- <script>
-      function workisay()
-      {
-        var name=document.getElementById("textbox1").value;
-        var description=document.getElementById("textbox").value;
-        document.getElementById("textbox1").value=description;
-        document.getElementById("textbox").value=name;
-        var xmlHttp = new XMLHttpRequest();
-        //added below line by blake
-        var responseJSON = null;
-          xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/do_pw_login?
-          { 
-	          "username":"jmp6xb@mst.edu",
-          	  "password_hash":"!Password"
-          }", false );
-          xmlHttp.send( null );
-          //var login_token xmlHttp.responseText;
-          //added below line by blake
-          var responseJSON = xmlHttp.responseText ? (!responseJSON ? JSON.parse(xmlHttp.responseText) : responseJSON) : null;
-          document.getElementById("textbox")=login_token;
-          xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/get_login_accounts?
-          {
-	          "login_token":"login_token"
-	      }", false );
-          xmlHttp.send( null );
-          //var account_id xmlHttp.responseText[0];
-          //added below line by blake
-          var responseJSON = xmlHttp.responseText[0] ? (!responseJSON ? JSON.parse(xmlHttp.responseText) : responseJSON) : null;
-          document.getElementById("textbox1")=account_id;
-          xmlHttp = new XMLHttpRequest();
-          xmlHttp.open( "GET", "http://api.globalhack4.test.lockerdome.com/create_content?
-          {
-	          "login_token":"login_token",
-	          "account_id":"account_id",
-	          "type":"page",
-	          "title":"Title here",
-	          "body":"body here"
-	      }", false );
-          xmlHttp.send( null );
-          //var content_id xmlHttp.responseText;
-          //added below line by blake
-          var responseJSON = xmlHttp.responseText ? (!responseJSON ? JSON.parse(xmlHttp.responseText) : responseJSON) : null;          
-        
-      }
-    </script> -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Jake Pickle</h1>
+        <p>That's Me</p>
+      </div>
+    </div> 
 
-
-      <script src="examples/serverside_api_example.js"></script>
-      <script src="examples/clientside_example/public/javascripts/app_platform.js"></script>
-      <script src="examples/clientside_example/public/javascripts/jquery.js"></script>
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.scrollzer.min.js"></script>
-      <script src="assets/js/jquery.scrolly.min.js"></script>
-      <script src="assets/js/skel.min.js"></script> 
-      <script src="assets/js/util.js"></script>
-      <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-      <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
-      <link rel="stylesheet" href="examples/clientside_example/public/stylesheets/styles.css"
-      <script src="assets/js/main.js"></script>
-
-
+    <div class="learn-more">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+      <h3>Linkedin</h3>
+      <p><a href="https://www.linkedin.com/in/jakepickle" target="_blank">Find Mine Here</a></p>
+      </div>
+      <div class="col-md-4">
+      <h3>GitHub</h3>
+      <p><a href="http://www.github.com/jakepickle" target="_blank">Click for GitHub</a></p>
+        </div>
+      <div class="col-md-4">
+      <h3>My Website</h3>
+      <p><a href="file:///C:/Users/ThePickle/Desktop/index.html">Why Would You Click This?</a></p>
+      </div>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
