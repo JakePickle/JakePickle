@@ -34,7 +34,7 @@ body {
 }
 
 .jumbotron {
-  background-image:url('./background.jpg');
+  background-image:url('./assets/background.jpg');
   height: 400px;
   width: auto;
   max-width: 100%;
@@ -82,6 +82,10 @@ body {
   position: relative;
   top:50px;
   color: green;
+}
+
+.projects ul {
+    list-style-type: none;
 }
 
 .projects .container {
