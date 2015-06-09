@@ -16,7 +16,7 @@ body {
 .jumbotron {
   background-image:url('./background.jpg');
   height: 400px;
-  width: auto;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
