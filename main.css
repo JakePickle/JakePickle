@@ -3,17 +3,33 @@ body {
 }
 .nav a {
   color: #5a5a5a;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
   padding: 14px 10px;
   text-transform: uppercase;
 }
 
 .nav .container {
-  height: 60px;
+  height: 25px;
 }
 
 .nav li {
+  display: inline;
+}
+
+.nav-sm a {
+  color: #0645AD;
+  font-size: 50px;
+  font-weight: bold;
+  padding: 30px 35px;
+  text-transform: uppercase;
+}
+
+.nav-sm .container {
+  height: 70px;
+}
+
+.nav-sm li {
   display: inline;
 }
 
@@ -41,6 +57,18 @@ body {
 .jumbotron p {
   font-size: 20px;
   color: #fff;
+}
+
+.name-text {
+  color: green;
+}
+
+.name-text h3 {
+  font-weight: bold;
+}
+
+.name-text p {
+  font-size: 20px;
 }
 
 .learn-more h3 {
