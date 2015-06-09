@@ -43,3 +43,23 @@ body {
   font-weight: bold;
   color: green;
 }
+
+.projects {
+  position: relative;
+  top:50px;
+  color: green;
+}
+
+.projects .container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+.projects .border {
+  margin-top:10px;
+  border: green medium solid;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-align: center;
+}
