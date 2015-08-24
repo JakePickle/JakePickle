@@ -101,3 +101,45 @@ body {
   -webkit-border-radius: 10px;
   text-align: center;
 }
+
+
+
+
+
+
+.jumbotron-farrar {
+  background-image:url('./assets/farrar.jpg');
+  height: 400px;
+  width: auto;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron-farrar .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron-farrar h1 {
+  color: #fff;
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron-farrar p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.farrar-more h3 {
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: green;
+}
+
+.farrar-more p {
+  color: red;
+}
